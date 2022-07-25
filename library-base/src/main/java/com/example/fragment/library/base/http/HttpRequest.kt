@@ -135,7 +135,7 @@ open class HttpRequest @JvmOverloads constructor(
         var contentTypeFor = "application/octet-stream"
         try {
             fileNameMap.getContentTypeFor(URLEncoder.encode(path, "UTF-8")).also {
-                if (it.isBlank()) {
+                if (it.isNotBlank()) {
                     contentTypeFor = it
                 }
             }
